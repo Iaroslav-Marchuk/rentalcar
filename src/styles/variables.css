@@ -1,0 +1,24 @@
+:root {
+  --color-main: #101828;
+  --color-gray: #8d929a;
+  --color-button: #3470ff;
+  --color-button-hover: #0b44cd;
+  --color-gray-ligth: #dadde1;
+  --color-badges: #f2f4f7;
+  --color-inputs: #f7f7f7;
+  --color-white: #fff;
+
+  --font-body: "Manrope", sans-serif;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
+
+  --fs-h1: 60px;
+  --fs-h2: 24px;
+  --fs-h3: 20px;
+  --fs-button: 16px;
+  --fs-body: 16px;
+  --fs-body2: 12px;
+}
