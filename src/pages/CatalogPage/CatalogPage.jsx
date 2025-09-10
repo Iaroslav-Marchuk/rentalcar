@@ -1,10 +1,13 @@
-import css from "./CatalogPage.module.css";
+import Container from '../../components/Container/Container.jsx';
+import FilterBar from '../../components/FilterBar/FilterBar.jsx';
+import css from './CatalogPage.module.css';
 
 const CatalogPage = () => {
   return (
-    <div className={css.container}>
+    <Container>
       <p>CatalogPage</p>
-    </div>
+      <FilterBar />
+    </Container>
   );
 };
 export default CatalogPage;

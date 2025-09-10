@@ -1,0 +1,59 @@
+.label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-body2);
+  line-height: 1.33;
+  color: var(--color-gray);
+}
+
+.brandDropDown {
+  width: 204px;
+  height: 150px;
+}
+
+.filterBrand__control {
+  padding: 4px 12px; /* внутрішні відступи */
+  border-radius: 12px; /* скруглення */
+  min-height: 144px; /* висота */
+  border: 1px solid #3470ff;
+  width: 204px;
+}
+
+.filterBrand__single-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-main);
+}
+
+.filterBrand__placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-gray);
+}
+
+.filterBrand__option {
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.filterBrand__option--is-selected {
+  background-color: #3470ff;
+  color: white;
+}
+
+.filterBrand__option--is-focused {
+  background-color: #e6f0ff;
+  color: #101828;
+}
+
+.filterBrand__menu {
+  margin-top: 4px; /* відступ зверху */
+  border-radius: 12px;
+  overflow: hidden; /* щоб скруглення працювало */
+}
+
+.filterBrand__menu-list {
+  padding: 0;
+}

@@ -1,0 +1,25 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 24px 0;
+}
+
+.link {
+  color: var(--color-main);
+  user-select: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-button);
+  line-height: 1.25;
+  text-align: center;
+}
+
+.link:hover {
+  color: var(--color-button-hover);
+}
+
+.active {
+  color: var(--color-button-hover);
+  transform: scale(0.97);
+}

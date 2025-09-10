@@ -1,10 +1,10 @@
-import css from "./DetailsPage.module.css";
+import css from './DetailsPage.module.css';
 
 const DetailsPage = () => {
   return (
-    <div className={css.container}>
+    <Container>
       <p>DetailsPage</p>
-    </div>
+    </Container>
   );
 };
 export default DetailsPage;

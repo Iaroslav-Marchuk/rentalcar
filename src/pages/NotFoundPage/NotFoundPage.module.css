@@ -8,23 +8,23 @@
 }
 
 .title {
-  font-size: 72px;
+  font-size: var(--fs-h1);
   margin-bottom: 48px;
 }
 
 .text {
-  font-size: 20px;
+  font-size: var(--fs-h3);
   margin-bottom: 48px;
 }
 
 .link {
-  background-color: var(--color-btn-bg);
-  color: var(--color-btn-txt);
+  background-color: var(--color-button);
+  color: var(--color-white);
   padding: 8px 16px;
   transition: background-color 0.3s ease, color 0.3s ease;
-  border-radius: var(--border-radius);
+  border-radius: 8px;
 }
 
 .link:hover {
-  background-color: var(--color-btn-hover-bg);
+  background-color: var(--color-button-hover);
 }

@@ -1,0 +1,24 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+  padding: 12px 24px;
+  border: none;
+
+  background-color: var(--color-button);
+  color: var(--color-white);
+  font-weight: var(--fw-semi-bold);
+  font-size: var(--fs-button);
+
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  cursor: pointer;
+}
+
+.btn:hover:not(:disabled),
+.btn:focus {
+  background-color: var(--color-button-hover);
+  outline: none;
+}

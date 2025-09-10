@@ -1,4 +1,10 @@
 .header {
-  width: 1200px;
-  margin: 0 auto;
+  width: 100%;
+  background-color: var(--color-badges);
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

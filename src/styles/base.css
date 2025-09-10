@@ -12,3 +12,11 @@ main {
 main:has(.back-link) {
   text-align: center;
 }
+
+html,
+body {
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

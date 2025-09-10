@@ -1,16 +1,5 @@
-/* Layout.module.css */
-.container {
-  width: 100%;
-  max-width: 1400px; /* фон/хедер 1400px */
-  margin: 0 auto;
+.layout {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: aquamarine;
-}
-
-.wrapper {
-  /* max-width: 1200px;  */
-  width: 100%;
-  margin: 0 auto;
 }
