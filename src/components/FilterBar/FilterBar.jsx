@@ -20,8 +20,8 @@ const FilterBar = () => {
     <div className={css.wrapper}>
       <label className={css.label}>Car brand</label>
       <Select
-        className={css.brandDropDown}
-        classNamePrefix="filterBrand"
+        className="react-select-container"
+        classNamePrefix="react-select"
         value={selectedOption}
         onChange={handleChange}
         options={options}

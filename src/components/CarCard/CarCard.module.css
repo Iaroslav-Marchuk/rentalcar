@@ -1,0 +1,75 @@
+.CarCardontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.img {
+  border-radius: 14px;
+  width: 276px;
+  height: 268px;
+  margin-bottom: 16px;
+  object-fit: cover;
+}
+
+.titleWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-body);
+  line-height: 1.25;
+  color: var(--color-main);
+}
+
+.model {
+  color: var(--color-button);
+}
+
+.price {
+  margin-right: 11px;
+}
+
+.techWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 28px;
+}
+
+.techRow {
+  display: flex;
+  flex-direction: row;
+  gap: 11px;
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-body2);
+  line-height: 1.33;
+  color: var(--color-gray);
+  padding-bottom: 4px;
+}
+
+.techItem {
+  position: relative;
+}
+
+.techItem:after {
+  content: '';
+  position: absolute;
+  right: -5px;
+  width: 1px;
+  height: 100%;
+  background-color: #dadde1;
+}
+
+.last::after {
+  content: none;
+}
+
+.btn {
+  width: 100%;
+  margin-top: auto;
+}

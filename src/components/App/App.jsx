@@ -1,23 +1,24 @@
-import { lazy, Suspense } from "react";
-import { Route, Routes } from "react-router-dom";
+import { lazy, Suspense } from 'react';
+import { Route, Routes } from 'react-router-dom';
 
-import Layout from "../Layout/Layout.jsx";
+import Layout from '../Layout/Layout.jsx';
+import Loader from '../Loader/Loader.jsx';
 
-const HomePage = lazy(() => import("../../pages/HomePage/HomePage.jsx"));
+const HomePage = lazy(() => import('../../pages/HomePage/HomePage.jsx'));
 const CatalogPage = lazy(() =>
-  import("../../pages/CatalogPage/CatalogPage.jsx")
+  import('../../pages/CatalogPage/CatalogPage.jsx')
 );
 const DetailsPage = lazy(() =>
-  import("../../pages/DetailsPage/DetailsPage.jsx")
+  import('../../pages/DetailsPage/DetailsPage.jsx')
 );
 const NotFoundPage = lazy(() =>
-  import("../../pages/NotFoundPage/NotFoundPage.jsx")
+  import('../../pages/NotFoundPage/NotFoundPage.jsx')
 );
 
 function App() {
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loader loadingState={true} />}>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />

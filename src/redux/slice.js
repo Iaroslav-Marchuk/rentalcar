@@ -19,8 +19,8 @@ const slice = createSlice({
     favorites: [],
     filters: {},
     totalCars: 0,
-    page: 0,
     totalPages: 1,
+    currentPage: 1,
     isLoading: false,
     error: null,
   },
@@ -29,9 +29,11 @@ const slice = createSlice({
     clearCurrentItem: state => {
       state.currentCar = null;
     },
+
     clearFilters: state => {
       state.filters = {};
     },
+
     clearSearchParams: state => {
       state.cars = [];
       state.currentPage = 1;
@@ -48,13 +50,14 @@ const slice = createSlice({
         state.error = null;
 
         const { cars, page, totalPages, totalCars } = action.payload;
-        if (page === 1) {
+        const pageNumber = Number(page);
+        if (pageNumber === 1) {
           state.cars = cars;
         } else {
           state.cars = [...state.cars, ...cars];
         }
 
-        state.currentPage = page;
+        state.currentPage = pageNumber;
         state.totalPages = totalPages;
         state.totalCars = totalCars;
       })
