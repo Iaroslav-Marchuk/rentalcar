@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import Layout from '../Layout/Layout.jsx';
 import Loader from '../Loader/Loader.jsx';
+import { Toaster } from 'react-hot-toast';
 
 const HomePage = lazy(() => import('../../pages/HomePage/HomePage.jsx'));
 const CatalogPage = lazy(() =>
@@ -18,6 +19,7 @@ const NotFoundPage = lazy(() =>
 function App() {
   return (
     <>
+      <Toaster position="top-right" reverseOrder={false} />
       <Suspense fallback={<Loader loadingState={true} />}>
         <Routes>
           <Route path="/" element={<Layout />}>

@@ -1,0 +1,123 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 72px;
+  margin: 84px 0 104px;
+}
+
+.leftSide {
+  flex: 0 0 640px;
+}
+
+.rightSide {
+  flex: 1;
+  min-width: 0;
+}
+
+.img {
+  margin-bottom: 40px;
+  border-radius: 19px;
+}
+
+.notFound {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto 0;
+  text-align: center;
+  font-style: italic;
+  color: var(--color-main);
+  font-weight: var(--fw-semi-bold);
+  font-size: var(--fs-h3);
+}
+
+.info {
+  margin-top: 20px;
+}
+
+.titileContainer {
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.title {
+  font-weight: var(--fw-semi-bold);
+  font-size: var(--fs-h2);
+  line-height: 1.33;
+  color: var(--color-main);
+}
+
+.id {
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-body);
+  line-height: 1.25;
+  color: var(--color-gray);
+}
+
+.address {
+  display: flex;
+  align-items: center;
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-body);
+  line-height: 1.25;
+  color: var(--color-main);
+  margin-bottom: 16px;
+}
+
+.addressSpan {
+  padding-right: 16px;
+}
+
+.price {
+  display: block;
+  font-weight: var(--fw-semi-bold);
+  font-size: var(--fs-h2);
+  line-height: 1.33;
+  color: var(--color-button);
+  margin-bottom: 32px;
+}
+
+.description {
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-body);
+  line-height: 1.25;
+  color: var(--color-main);
+  margin-bottom: 68px;
+}
+
+.conditions,
+.specification {
+  margin-bottom: 110px;
+}
+.condTitle,
+.specTitle,
+.accTitle {
+  font-weight: var(--fw-semi-bold);
+  font-size: var(--fs-h3);
+  line-height: 1.2;
+  color: var(--color-main);
+  margin-bottom: 20px;
+}
+
+.condList,
+.specLits,
+.accList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.condItem,
+.specItem,
+.accItem {
+  display: flex;
+  align-items: center;
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-body);
+  line-height: 1.25;
+  color: var(--color-main);
+}

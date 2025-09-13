@@ -1,0 +1,69 @@
+.formContainer {
+  padding: 32px;
+  border: 1px solid var(--color-gray-ligth);
+  border-radius: 10px;
+  background-color: var(--color-white);
+}
+
+.formTitle {
+  font-weight: var(--fw-semi-bold);
+  font-size: var(--fs-h3);
+  line-height: 1.2;
+  color: var(--color-main);
+  margin-bottom: 8px;
+}
+
+.text {
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-body);
+  line-height: 1.25;
+  color: var(--color-gray);
+  margin-bottom: 24px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.formInput,
+.formTextarea {
+  background: var(--color-inputs);
+  border-radius: 12px;
+  padding: 12px 20px;
+  border: none;
+  width: 100%;
+  outline: none;
+  font-size: var(--fs-body);
+  font-weight: var(--fw-medium);
+  color: var(--color-gray);
+  line-height: 1.25;
+}
+
+.formTextarea {
+  min-height: 88px;
+  resize: vertical;
+}
+
+.formInput::placeholder,
+.formTextarea::placeholder {
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-body);
+  line-height: 1.25;
+  color: var(--color-gray);
+}
+
+.error {
+  color: crimson;
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-body2);
+  margin-top: 4px;
+  padding-left: 20px;
+}
+
+.formBtn {
+  width: 156px;
+  line-height: 1.25;
+  margin: 24px auto 0;
+}

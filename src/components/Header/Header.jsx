@@ -1,5 +1,6 @@
+import { Link } from 'react-router-dom';
 import Container from '../Container/Container.jsx';
-import Logo from '../Logo/Logo.jsx';
+import Icon from '../Icon/Icon.jsx';
 import Navigation from '../Navigation/Navigation.jsx';
 import css from './Header.module.css';
 
@@ -8,7 +9,9 @@ const Header = () => {
     <header className={css.header}>
       <Container>
         <div className={css.inner}>
-          <Logo />
+          <Link to="/" className={css.logo}>
+            <Icon name="icon-Logo" width={104} height={16} />
+          </Link>
           <Navigation />
         </div>
       </Container>
