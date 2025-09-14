@@ -1,10 +1,19 @@
 .filterWrapper {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   gap: 16px;
   margin-bottom: 56px;
-  align-items: end;
+  align-items: center;
+}
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 1240px) {
+  .filterWrapper {
+    flex-direction: row;
+  }
 }
 
 .searchBtn {

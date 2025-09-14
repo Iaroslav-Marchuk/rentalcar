@@ -7,7 +7,11 @@ import Filter from '../../components/Filter/Filter.jsx';
 
 import { getAllBrands, getAllCars } from '../../redux/operations.js';
 import { selectBrands, selectFilters } from '../../redux/selectors.js';
-import { clearFilters, setFilter } from '../../redux/slice.js';
+import {
+  clearFilters,
+  clearSearchParams,
+  setFilter,
+} from '../../redux/slice.js';
 
 import css from './FilterPanel.module.css';
 
@@ -24,6 +28,7 @@ const FilterPanel = () => {
   }, [dispatch]);
 
   const handleSearch = () => {
+    dispatch(clearSearchParams());
     dispatch(getAllCars({ ...filters, page: 1 }));
     console.log(filters);
   };

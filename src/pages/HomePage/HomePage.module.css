@@ -1,14 +1,11 @@
 .hero {
-  max-width: 1440px;
+  max-width: 100%;
   margin: 0 auto;
   width: 100%;
   display: flex;
-
   background-image: url('../../assets/theme.jpg');
-
   background-position: top;
   background-repeat: no-repeat;
-
   box-sizing: border-box;
 }
 
@@ -17,13 +14,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  margin-top: 436px;
+  margin-top: 236px;
 }
 
 .title {
   font-weight: var=(-fw-bold);
-  font-size: var(--fs-h1);
+  font-size: 48px;
   line-height: 1.2;
   text-transform: capitalize;
   color: var(--color-white);
@@ -32,15 +28,34 @@
 
 .subtitle {
   font-weight: var=(--fw-semi-bold);
-  font-size: var(--fs-h2);
+  font-size: var(--fs-h3);
   line-height: 1.33;
-
   color: var(--color-white);
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .btn {
   width: 276px;
   line-height: 1.25;
   margin-bottom: 60px;
+}
+
+@media only screen and (min-width: 768px) {
+  .subtitle {
+    font-size: var(--fs-h2);
+  }
+}
+
+@media only screen and (min-width: 1240px) {
+  .hero {
+    max-width: 1440px;
+  }
+
+  .title {
+    font-size: var(--fs-h1);
+  }
+
+  .subtitle {
+    margin-bottom: 40px;
+  }
 }

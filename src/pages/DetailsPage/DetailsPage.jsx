@@ -67,13 +67,12 @@ const DetailsPage = () => {
 
   return (
     <Container>
-      {isLoading && <Loader loadingState={isLoading} />}
       <div className={css.wrapper}>
-        <div className={css.leftSide}>
-          <img className={css.img} src={img} alt={description} />
+        <img className={css.img} src={img} alt={description} />
+        <div className={css.bookForm}>
           <BookForm />
         </div>
-        <div className={css.rightSide}>
+        <div className={css.specificationWrapper}>
           <div className={css.info}>
             <div className={css.titileContainer}>
               <h2 className={css.title}>{`${brand} ${model}, ${year}`}</h2>

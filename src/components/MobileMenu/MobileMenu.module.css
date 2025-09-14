@@ -1,0 +1,18 @@
+.navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+  gap: 50px;
+  padding: 24px 0;
+}
+
+.link {
+  color: var(--color-main);
+  user-select: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-button);
+  line-height: 1.25;
+  text-align: center;
+}

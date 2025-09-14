@@ -1,21 +1,16 @@
 .wrapper {
-  display: flex;
-  flex-direction: row;
-  gap: 72px;
-  margin: 84px 0 104px;
-}
-
-.leftSide {
-  flex: 0 0 640px;
-}
-
-.rightSide {
-  flex: 1;
-  min-width: 0;
+  display: grid;
+  grid-template-areas:
+    'img'
+    'spec'
+    'form';
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin: 16px 0 20px;
 }
 
 .img {
-  margin-bottom: 40px;
+  grid-area: img;
   border-radius: 19px;
 }
 
@@ -93,6 +88,7 @@
 .specification {
   margin-bottom: 110px;
 }
+
 .condTitle,
 .specTitle,
 .accTitle {
@@ -120,4 +116,37 @@
   font-size: var(--fs-body);
   line-height: 1.25;
   color: var(--color-main);
+}
+
+.bookForm {
+  grid-area: form;
+}
+
+.specificationWrapper {
+  grid-area: spec;
+}
+
+@media only screen and (min-width: 768px) {
+  .wrapper {
+    margin: 20px 0 32px;
+  }
+
+  .conditions,
+  .specification {
+    margin-bottom: 60px;
+  }
+}
+
+@media (min-width: 1240px) {
+  .wrapper {
+    grid-template-areas:
+      'img spec'
+      'form spec';
+    grid-template-columns: 640px 1fr;
+    gap: 40px 72px;
+  }
+
+  .bookForm {
+    margin-top: auto; /* форма внизу лівої колонки */
+  }
 }
