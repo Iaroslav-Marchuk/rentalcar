@@ -1,12 +1,39 @@
-# React + Vite
+# RentalCar
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Короткий опис
 
-Currently, two official plugins are available:
+RentalCar — це веб-додаток для перегляду та оренди автомобілів. Користувачі
+можуть переглядати каталог авто, застосовувати фільтри за брендом, ціною та
+пробігом, додавати обране та робити замовлення.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Основні функції
 
-## Expanding the ESLint configuration
+- Перегляд автомобілів у каталозі
+- Пошук та фільтрація авто за брендом, ціною та пробігом
+- Додавання автомобілів в обране
+- Детальний перегляд інформації про авто
+- Замовлення авто через форму
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Технології та стек
+
+- **Frontend:** React, Redux Toolkit, Vite, CSS Modules
+- **HTTP-запити:** Axios
+- **Інші бібліотеки:** react-router-dom, lucide-react і т д
+
+## Структура проєкту
+
+/src /components — компоненти інтерфейсу /pages — сторінки додатку /redux — стан
+додатку та асинхронні операції /services — налаштування API /styles — глобальні
+стилі App.jsx — головний компонент main.jsx — точка входу
+
+## Використання
+
+Вибрати авто з каталогу Застосувати фільтри за брендом, ціною або пробігом
+Додати авто в обране Переглянути деталі авто та зробити замовлення
+
+## Автор
+
+Ярослав Марчук
+
+- GitHub: https://github.com/Iaroslav-Marchukyourusername
+- email: jarik.13a@gmail.com
