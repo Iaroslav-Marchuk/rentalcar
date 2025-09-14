@@ -1,19 +1,25 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+
+import FilterPanel from '../../components/FilterPanel/FilterPanel.jsx';
 import Button from '../../components/Button/Button.jsx';
 import Catalog from '../../components/Catalog/Catalog.jsx';
 import Container from '../../components/Container/Container.jsx';
-import FilterBar from '../../components/FilterBar/FilterBar.jsx';
-import { useEffect } from 'react';
+import Loader from '../../components/Loader/Loader.jsx';
+
 import { getAllCars } from '../../redux/operations.js';
+import { clearFilters } from '../../redux/slice.js';
+
 import {
   selectCatalog,
   selectCurrentPage,
+  selectFilters,
   selectIsError,
   selectIsLoading,
   selectTotalPages,
 } from '../../redux/selectors.js';
+
 import css from './CatalogPage.module.css';
-import Loader from '../../components/Loader/Loader.jsx';
 
 const CatalogPage = () => {
   const cars = useSelector(selectCatalog);
@@ -21,37 +27,34 @@ const CatalogPage = () => {
   const isError = useSelector(selectIsError);
   const currentPage = useSelector(selectCurrentPage);
   const totalPages = useSelector(selectTotalPages);
+  const filters = useSelector(selectFilters);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (cars.length === 0) {
-      dispatch(getAllCars({ page: 1 }));
-    }
-  }, [dispatch, cars.length]);
+    dispatch(clearFilters());
 
-  const handleClick = () => {
+    dispatch(getAllCars({ page: 1 }));
+  }, [dispatch]);
+
+  const handleLoadMore = () => {
     if (currentPage < totalPages) {
-      dispatch(getAllCars({ page: currentPage + 1 }));
+      dispatch(getAllCars({ ...filters, page: currentPage + 1 }));
     }
   };
 
   return (
     <Container>
-      <div className={css.filterWrapper}>
-        <FilterBar />
-        <Button className={css.searchBtn}>Search</Button>
-      </div>
-
-      {isLoading && <Loader loadingState={isLoading} />}
+      <FilterPanel />
+      {isLoading && cars.length === 0 && <Loader loadingState={isLoading} />}
       {isError && <p>{isError}</p>}
       {!isError && cars.length > 0 && <Catalog />}
       {!isLoading && !isError && cars.length === 0 && (
-        <p className={css.noResults}>The catalog is empty!</p>
+        <p className={css.noResults}>No results!</p>
       )}
 
       {currentPage < totalPages && (
-        <Button className={css.loadMoreBtn} onClick={handleClick}>
+        <Button className={css.loadMoreBtn} onClick={handleLoadMore}>
           Load more
         </Button>
       )}

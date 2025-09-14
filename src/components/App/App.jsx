@@ -1,9 +1,9 @@
 import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 
 import Layout from '../Layout/Layout.jsx';
 import Loader from '../Loader/Loader.jsx';
-import { Toaster } from 'react-hot-toast';
 
 const HomePage = lazy(() => import('../../pages/HomePage/HomePage.jsx'));
 const CatalogPage = lazy(() =>

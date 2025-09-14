@@ -1,0 +1,13 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 204px;
+}
+
+.label {
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-body2);
+  line-height: 1.33;
+  color: var(--color-gray);
+}

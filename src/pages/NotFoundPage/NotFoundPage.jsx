@@ -1,6 +1,8 @@
 import { NavLink } from 'react-router-dom';
-import css from './NotFoundPage.module.css';
+
 import Container from '../../components/Container/Container.jsx';
+
+import css from './NotFoundPage.module.css';
 
 const NotFoundPage = () => {
   return (

@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getAllCars, getCarById } from './operations.js';
+import { getAllBrands, getAllCars, getCarById } from './operations.js';
 
 const handlePending = state => {
   state.isLoading = true;
@@ -17,7 +17,13 @@ const slice = createSlice({
     cars: [],
     currentCar: null,
     favorites: [],
-    filters: {},
+    filters: {
+      brand: null,
+      rentalPrice: null,
+      minKm: null,
+      maxKm: null,
+    },
+    brands: [],
     totalCars: 0,
     totalPages: 1,
     currentPage: 1,
@@ -30,15 +36,33 @@ const slice = createSlice({
       state.currentCar = null;
     },
 
-    clearFilters: state => {
-      state.filters = {};
-    },
-
     clearSearchParams: state => {
       state.cars = [];
       state.currentPage = 1;
       state.totalPages = 1;
       state.totalCars = 0;
+    },
+
+    toggleFavorite: (state, action) => {
+      const id = action.payload;
+      if (state.favorites.includes(id)) {
+        state.favorites = state.favorites.filter(fav => fav !== id);
+      } else {
+        state.favorites.push(id);
+      }
+    },
+
+    setFilter: (state, action) => {
+      state.filters = { ...state.filters, ...action.payload };
+    },
+
+    clearFilters: state => {
+      state.filters = {
+        brand: null,
+        rentalPrice: null,
+        minMileage: null,
+        maxMileage: null,
+      };
     },
   },
 
@@ -69,11 +93,24 @@ const slice = createSlice({
         state.error = null;
         state.currentCar = action.payload;
       })
-      .addCase(getCarById.rejected, handleRejected);
+      .addCase(getCarById.rejected, handleRejected)
+
+      .addCase(getAllBrands.pending, handlePending)
+      .addCase(getAllBrands.fulfilled, (state, actions) => {
+        state.isLoading = false;
+        state.error = null;
+        state.brands = actions.payload;
+      })
+      .addCase(getAllBrands.rejected, handleRejected);
   },
 });
 
-export const { clearCurrentItem, clearFilters, clearSearchParams } =
-  slice.actions;
+export const {
+  clearCurrentItem,
+  clearSearchParams,
+  toggleFavorite,
+  setFilter,
+  clearFilters,
+} = slice.actions;
 
 export default slice.reducer;

@@ -1,14 +1,14 @@
 import toast from 'react-hot-toast';
-import Button from '../Button/Button.jsx';
-
 import DatePicker from 'react-datepicker';
+import { ErrorMessage, Field, Form, Formik } from 'formik';
+import * as Yup from 'yup';
+
+import Button from '../Button/Button.jsx';
+import Loader from '../Loader/Loader.jsx';
+
 import 'react-datepicker/dist/react-datepicker.css';
 import '../../styles/calendar.css';
 import css from './BookForm.module.css';
-
-import { ErrorMessage, Field, Form, Formik } from 'formik';
-import * as Yup from 'yup';
-import Loader from '../Loader/Loader.jsx';
 
 const initialValues = {
   name: '',

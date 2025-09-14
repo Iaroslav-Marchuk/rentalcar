@@ -1,6 +1,8 @@
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 import Button from '../../components/Button/Button.jsx';
 import Container from '../../components/Container/Container.jsx';
+
 import css from './HomePage.module.css';
 
 const HomePage = () => {

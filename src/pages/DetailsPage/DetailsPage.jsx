@@ -1,13 +1,17 @@
 import { useParams } from 'react-router-dom';
-import css from './DetailsPage.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { getCarById } from '../../redux/operations.js';
-import { selectCurrentCar, selectIsLoading } from '../../redux/selectors.js';
+
 import Container from '../../components/Container/Container.jsx';
 import Loader from '../../components/Loader/Loader.jsx';
 import BookForm from '../../components/BookForm/BookForm.jsx';
 import Icon from '../../components/Icon/Icon.jsx';
+
+import { getCarById } from '../../redux/operations.js';
+import { clearCurrentItem } from '../../redux/slice.js';
+import { selectCurrentCar, selectIsLoading } from '../../redux/selectors.js';
+
+import css from './DetailsPage.module.css';
 
 const DetailsPage = () => {
   const { id } = useParams();
@@ -17,6 +21,7 @@ const DetailsPage = () => {
   const isLoading = useSelector(selectIsLoading);
 
   useEffect(() => {
+    dispatch(clearCurrentItem());
     dispatch(getCarById(id));
   }, [dispatch, id]);
 
@@ -116,7 +121,7 @@ const DetailsPage = () => {
                   height={16}
                   style={{ marginRight: '8px' }}
                 />
-                {year}
+                {`Year: ${year}`}
               </li>
               <li className={css.specItem}>
                 <Icon
@@ -125,7 +130,7 @@ const DetailsPage = () => {
                   height={16}
                   style={{ marginRight: '8px' }}
                 />
-                {type}
+                {`Type: ${type}`}
               </li>
               <li className={css.specItem}>
                 <Icon
@@ -134,7 +139,7 @@ const DetailsPage = () => {
                   height={16}
                   style={{ marginRight: '8px' }}
                 />
-                {fuelConsumption}
+                {`Fuel Consumption: ${fuelConsumption}`}
               </li>
               <li className={css.specItem}>
                 <Icon
@@ -143,7 +148,7 @@ const DetailsPage = () => {
                   height={16}
                   style={{ marginRight: '8px' }}
                 />
-                {engineSize}
+                {`Engine Size: ${engineSize}`}
               </li>
             </ul>
           </div>

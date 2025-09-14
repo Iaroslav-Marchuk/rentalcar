@@ -4,15 +4,8 @@
   width: 100%;
   display: flex;
 
-  background-image:
-  
-  /* linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0.4),
-      rgba(0, 0, 0, 0.1)
-    ), */ url('../../assets/theme.jpg');
+  background-image: url('../../assets/theme.jpg');
 
-  /* background-size: cover; */
   background-position: top;
   background-repeat: no-repeat;
 

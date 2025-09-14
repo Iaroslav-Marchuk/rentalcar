@@ -1,8 +1,24 @@
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import clsx from 'clsx';
+
+import Icon from '../Icon/Icon.jsx';
 import Button from '../Button/Button.jsx';
+
+import { selectFavorites } from '../../redux/selectors.js';
+import { toggleFavorite } from '../../redux/slice.js';
+
 import css from './CarCard.module.css';
 
 const CarCard = ({ car }) => {
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const favorites = useSelector(selectFavorites);
+  const isFavorite = favorites.includes(car.id);
+
+  const dispatch = useDispatch();
+
   const {
     img,
     description,
@@ -30,8 +46,28 @@ const CarCard = ({ car }) => {
     navigate(`/catalog/${car.id}`);
   };
 
+  const handleFavoriteClick = () => {
+    dispatch(toggleFavorite(car.id));
+    setIsAnimating(true);
+  };
+
+  const handleAnimationEnd = () => {
+    setIsAnimating(false);
+  };
+
   return (
     <div className={css.CarCardontainer}>
+      <button onClick={handleFavoriteClick} className={css.favBtn}>
+        <Icon
+          name={isFavorite ? 'icon-heart-full' : 'icon-heart-empty'}
+          width={16}
+          height={16}
+          stroke="white"
+          className={clsx(css.icon, { [css.iconPop]: isAnimating })}
+          onAnimationEnd={handleAnimationEnd}
+        />
+      </button>
+
       <img className={css.img} src={img} alt={description} />
       <div className={css.titleWrapper}>
         <h2 className={css.title}>
@@ -52,7 +88,6 @@ const CarCard = ({ car }) => {
           >{`${formattedMileage} km`}</span>
         </div>
       </div>
-
       <Button className={css.btn} onClick={handleClick}>
         Read more
       </Button>
